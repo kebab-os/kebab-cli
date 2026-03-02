@@ -1,6 +1,7 @@
 <div align="center">
   <a href="https://kebabos.me"><img src="static/IMG_4526.jpeg" width="200px" height="auto" /></a>
-  <h1>kebabOS CLI - v0.3.0</h1>
+kebabOS CLI - v0.3.0
+  <h1>the new logo is suck brng old one back</h1>
   <b>A high-performance, command-line operating system built in Python Pygame. Features bash-like command shell and custom kernel.</b>
 </div>
 
