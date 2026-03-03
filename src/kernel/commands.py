@@ -142,11 +142,14 @@ Keyboard Shortcuts:
         
     def cmd_neofetch(self, args):
         ascii_art = r"""
-    ___  ________________  ___    ____  __    ________ 
-   / _ \/ ___/ ___/ __/ / / / |  / / / / /   / ____/ / 
-  / // / /__/ /__/ _// /_/ /| | / / /_/ /   / /   / /  
- /____/\___/\___/___/\__,_/ |___/\____/   /_/   /_/   
-                                                       """
+  _        _           _     
+ | |      | |         | |    
+ | | _____| |__   __ _| |__  
+ | |/ / _ \ '_ \ / _` | '_ \ 
+ |   <  __/ |_) | (_| | |_) |
+ |_|\_\___|_.__/ \__,_|_.__/   
+                          
+        """
         info = f"""
 {ascii_art}
 OS: Kebab-CLI v1.0 (Pygame Terminal)
@@ -217,3 +220,4 @@ Pygame: {__import__('pygame').version.ver}
                     self.terminal.output_buffer.add(f.read().rstrip())
             except Exception as e:
                 self.terminal.output_buffer.add(f"cat: {path}: {e}", TERM_CONFIG['error_color'])
+
