@@ -2,7 +2,7 @@
 
 ### Windows
 
-Run the [other install script](../install/other.sh) to install kebab onto your windows device. When you are ready to boot, simply run:
+Run the [other install script](../install/other.sh) to install kebab onto your device. When you are ready to boot, simply run:
 
 ```powershell
 python main.py
