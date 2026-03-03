@@ -9,7 +9,9 @@
 ## Features
 
 - Custom kernel: Custom made kernel, as the core for the cli.
-- more coming soon...
+- User settings, for customisation (including theme colours, font size and line spacing)
+- Hard-coded and os commands
+- Curl built in
 
 ## Docs
 
