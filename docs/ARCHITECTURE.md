@@ -32,7 +32,7 @@ Kebab-CLI is a Pygame-based terminal emulator application (v0.1.0) that provides
 
 ## Application Flow
 
-###
+```
 boot() → Initialize Pygame → Create Window → Load Assets
          ↓
 Create Renderer & Terminal Components
@@ -46,7 +46,7 @@ Main Event Loop (60 FPS)
          └─ Display Refresh
          ↓
 Cleanup & Exit
-###
+```
 
 ## Key Features
 
@@ -76,14 +76,14 @@ Cleanup & Exit
 
 ## Directory Structure
 
-###
+```
 kebab-cli/
 ├── kebab_cli.py (entry point)
 ├── terminal.py (terminal emulator logic)
 ├── renderer.py (rendering system)
 ├── config.py (configuration)
 ├── utils.py (utility functions)
-├��─ input_buffer.py (input management)
+├── input_buffer.py (input management)
 ├── output_buffer.py (output management)
 ├── static/
 │   └── system/
@@ -93,7 +93,7 @@ kebab-cli/
 ├── storage/
 │   └── files/ (working directory for file operations)
 └── README.md
-###
+```
 
 ## Configuration & Initialization
 
