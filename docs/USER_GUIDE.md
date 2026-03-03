@@ -1,19 +1,18 @@
-# Kebab-CLI User Guide
+ # Kebab-CLI User Guide
 
 ## Getting Started
 
 ### Running the Application
 
-###
-bash
+```bash
 python kebab_cli.py
-###
+```
 
-The terminal will start in fullscreen mode and display a welcome message:
-###
+The terminal will boot and display a welcome message:
+```
 Kebab-CLI v0.1.0 - Shell
 Type 'help' for available commands and shortcuts
-###
+```
 
 ## User Interface
 
