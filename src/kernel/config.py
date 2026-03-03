@@ -17,3 +17,7 @@ TERM_CONFIG = {
     'max_history': 1000,
     'scrollback_lines': 500
 }
+
+# Selection colors
+TERM_CONFIG['selection_bg'] = (60, 120, 200)
+TERM_CONFIG['selection_fg'] = (255, 255, 255)

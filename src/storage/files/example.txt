@@ -1,0 +1,16 @@
+Kebab-CLI
+=========
+
+This project implements a simple terminal emulator using Pygame.
+
+Features:
+- Custom cursor images and text selection
+- Input line with readline-style editing and history
+- Output buffer with scrollback and ANSI stripping
+- Copy/cut/paste via system clipboard
+- Interactive settings panel for fonts and colors
+
+Usage:
+Run `main.py` to launch the terminal. Type commands or use built-in helpers.
+
+This file provides a quick overview for developers or users curious about the application.

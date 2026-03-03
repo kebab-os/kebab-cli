@@ -25,6 +25,13 @@ class TerminalBuffer:
         start = max(0, len(self.lines) - max_visible - self.scroll_offset)
         end = min(len(self.lines), start + max_visible)
         return self.lines[start:end]
+
+    def get_visible_with_start(self, height, line_height):
+        """Return (visible_lines, start_index) so callers can map visible indices to absolute lines."""
+        max_visible = height // line_height
+        start = max(0, len(self.lines) - max_visible - self.scroll_offset)
+        end = min(len(self.lines), start + max_visible)
+        return (self.lines[start:end], start)
     
     def scroll_up(self, lines=3):
         self.scroll_offset = min(len(self.lines), self.scroll_offset + lines)

@@ -31,7 +31,7 @@ def ensure_dependencies():
             missing.append(package)
     
     if not missing:
-        return True  # All good
+        return True
     
     print("=" * 50)
     print("Kebab-CLI Dependency Installer")
