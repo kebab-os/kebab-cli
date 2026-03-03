@@ -15,7 +15,7 @@
 
 ## Docs
 
-**Read the docs [in this repo](docs), or read the full kebab-os documentation in the [docs repo](https://github.com/kebab-os/docs)**
+**Read the docs [in this repo](docs), or read the full kebab-os documentation on the [website](https://docs.kebabos.me)**.
 
 ### User Guide
 
