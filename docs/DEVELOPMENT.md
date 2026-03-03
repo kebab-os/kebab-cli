@@ -2,26 +2,26 @@
 
 ## Architecture Overview
 
-###
-┌───────────────────────────────��─────────────────────┐
-│                   kebab_cli.py                      │
-│               (Main Entry Point)                    │
-└──────────────────┬─────��────────────────────────────┘
-                   │
-        ┌──────────┴──────────┐
-        │                     │
-┌───────▼────────┐   ┌────────▼────────┐
-│ TerminalEmulator│   │TerminalRenderer │
-│   (Logic)      │   │   (Display)     │
-└───────┬────────┘   └────────┬────────┘
-        │                     │
-        │          ┌──────────┴──────────┐
+```
+┌──────────────────────────────────────────────────────┐
+│                   kebab_cli.py                       │
+│                (Main Entry Point)                    │
+└─────────────────────────┬────────────────────────────┘
+                          │
+        ┌─────────────────┴────────────────┐
+        │                                  │
+┌───────▼──────────┐             ┌─────────▼─────────┐
+│ TerminalEmulator │             │  TerminalRenderer │
+│      (Logic)     │             │     (Display)     │
+└───────┬──────────┘             └─────────┬─────────┘
+        │                                  │
+        │          ┌─────────────────────┬─┘
         │          │                     │
-    ┌───▼──────────▼────┐   ┌───────────▼──┐
-    │  Input/Output     │   │ Settings    │
-    │   Buffers         │   │ Panel       │
-    └───────────────────┘   └─────────────┘
-###
+    ┌───▼──────────▼────┐    ┌───────────▼──┐
+    │  Input/Output     │    │ Settings     │
+    │   Buffers         │    │ Panel        │
+    └───────────────────┘    └──────────────┘
+```
 
 ## Module Descriptions
 
@@ -99,7 +99,7 @@
 **Key Configuration**:
 - `TERM_CONFIG`: Dictionary with colors and settings
 
-### python
+```python
 TERM_CONFIG = {
     'success_color': (0, 255, 0),
     'error_color': (255, 0, 0),
@@ -107,7 +107,7 @@ TERM_CONFIG = {
     'default_color': (255, 255, 255),
     'background_color': (0, 0, 0),
 }
-###
+```
 
 ### `utils.py`
 **Purpose**: Utility functions
@@ -155,7 +155,7 @@ TERM_CONFIG = {
 
 ### Mouse Position Detection
 
-### python
+```python
 # Output text region
 usable_height = height_now - 2 * renderer.padding - ...
 visible, start_idx = term.output_buffer.get_visible_with_start(
@@ -166,11 +166,11 @@ visible, start_idx = term.output_buffer.get_visible_with_start(
 prompt = term.get_prompt()
 combined = prompt + term.input_buffer.get_text()
 input_y = height_now - renderer.padding - renderer.line_height
-###
+```
 
 ### Text Width Calculation
 
-### python
+```python
 txt = strip_ansi(line_data['text'])
 txt_w = renderer.font.size(txt)[0]
 # Character position detection
@@ -178,11 +178,11 @@ for ci in range(len(txt)+1):
     if renderer.font.size(txt[:ci])[0] + renderer.padding > mx:
         rel_char = max(0, ci-1)
         break
-###
+```
 
 ### Event Loop Structure
 
-### python
+```python
 running = True
 while running and term.running:
     dt = clock.tick(60)  # 60 FPS cap
@@ -198,21 +198,21 @@ while running and term.running:
     renderer.render_buffer_with_input(...)
     renderer.render_menu_bar(...)
     renderer.flip()
-###
+```
 
 ## Adding New Features
 
 ### Adding a Menu Item
 
 1. **Update menu definition** in `renderer.py`:
-### python
+```python
 self.menus = [
     {'label': 'File', 'items': ['Save', 'Save As', 'Clear', 'New Item']}
 ]
-###
+```
 
 2. **Add callback** in `kebab_cli.py`:
-### python
+```python
 def new_feature():
     term.output_buffer.add("Feature executed!", TERM_CONFIG['success_color'])
 
@@ -224,57 +224,57 @@ renderer.menu_callbacks = {
         'New Item': new_feature
     }
 }
-###
+```
 
 ### Adding a Settings Control
 
 1. **Create slider definition** in `SettingsPanel`:
-### python
+```python
 self.sliders = [
     {'key': 'font_size', 'label': 'Font Size', 'min': 8, 'max': 32, 'value': 14},
     {'key': 'new_setting', 'label': 'New Setting', 'min': 0, 'max': 100, 'value': 50}
 ]
-###
+```
 
 2. **Handle slider update** in mouse motion event:
-### python
+```python
 if key == 'new_setting':
     # Apply setting
     renderer.update_setting(new_value)
-###
+```
 
 ### Adding Keyboard Shortcuts
 
 In `terminal.py` `handle_key()` method:
-### python
+```python
 if event.key == pygame.K_s and event.mod & pygame.KMOD_CTRL:
     # Handle Ctrl+S
     self.output_buffer.add("Ctrl+S pressed!", color)
-###
+```
 
 ## Common Patterns
 
 ### Displaying Output
-### python
+```python
 term.output_buffer.add("Message text", TERM_CONFIG['success_color'])
 term.output_buffer.add("Error occurred", TERM_CONFIG['error_color'])
-###
+```
 
 ### Getting Mouse Position
-### python
+```python
 mx, my = event.pos
 width_now, height_now = renderer.get_size()
-###
+```
 
 ### Checking if Point in Rectangle
-### python
+```python
 rect = pygame.Rect(x, y, w, h)
 if rect.collidepoint((mx, my)):
     # Point is in rectangle
-###
+```
 
 ### Converting Mouse Position to Text Position
-### python
+```python
 txt = strip_ansi(line_text)
 txt_width = renderer.font.size(txt)[0]
 if mx >= renderer.padding and mx <= renderer.padding + txt_width:
@@ -283,13 +283,13 @@ if mx >= renderer.padding and mx <= renderer.padding + txt_width:
         if renderer.font.size(txt[:ci])[0] + renderer.padding > mx:
             char_pos = max(0, ci-1)
             break
-###
+```
 
 ## Testing
 
 ### Unit Testing Template
 
-### python
+```python
 # test_terminal.py
 import unittest
 from terminal import TerminalEmulator
@@ -308,7 +308,7 @@ class TestTerminalEmulator(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-###
+```
 
 ### Manual Testing Checklist
 
@@ -342,7 +342,7 @@ if __name__ == '__main__':
 ## Debugging Tips
 
 ### Enable Debug Output
-### python
+```python
 # Add to kebab_cli.py
 import logging
 logging.basicConfig(level=logging.DEBUG, format='%(name)s - %(levelname)s - %(message)s')
@@ -350,7 +350,7 @@ logger = logging.getLogger(__name__)
 
 # In event handlers
 logger.debug(f"Event type: {event.type}, Position: {event.pos}")
-###
+```
 
 ### Common Issues
 
