@@ -10,60 +10,55 @@
 ## Dependencies
 
 ### Required
-###
+```
 pygame>=2.0.0      # Window management and rendering
-###
+```
 
 ### Optional
-###
+```
 tkinter            # For "Save As" file dialog (usually included with Python)
-###
+```
 
 ## Installation
 
 ### 1. Clone or Download the Repository
 
-###
-bash
+```bash
 git clone https://github.com/yourusername/kebab-cli.git
 cd kebab-cli
-###
+```
 
 ### 2. Create Virtual Environment (Recommended)
 
 **Windows:**
-###
-bash
+```bash
 python -m venv venv
 venv\Scripts\activate
-###
+```
 
 **macOS/Linux:**
-###
-bash
+```bash
 python3 -m venv venv
 source venv/bin/activate
-###
+```
 
 ### 3. Install Dependencies
 
-###
-bash
+```bash
 pip install pygame
-###
+```
 
 ### 4. Verify Installation
 
-###
-bash
+```bash
 python -c "import pygame; print(f'Pygame {pygame.version.ver} installed successfully')"
-###
+```
 
 ## Project Structure Setup
 
 Ensure the following directory structure exists:
 
-###
+```
 kebab-cli/
 ├── kebab_cli.py              (main entry point)
 ├── terminal.py               (terminal emulator)
@@ -81,7 +76,7 @@ kebab-cli/
 │   └── files/                (working directory - auto-created)
 ├── requirements.txt          (optional)
 └── README.md
-###
+```
 
 ### Auto-Created Directories
 
@@ -92,10 +87,9 @@ The following directories are automatically created on first run:
 
 ### Standard Execution
 
-###
-bash
+```bash
 python kebab_cli.py
-###
+```
 
 The application will:
 1. Initialize Pygame
@@ -107,24 +101,22 @@ The application will:
 ### Troubleshooting Startup Issues
 
 #### "ModuleNotFoundError: No module named 'pygame'"
-###
-bash
+```bash
 # Make sure pygame is installed
 pip install pygame
 
 # Or reinstall if corrupted
 pip install --upgrade --force-reinstall pygame
-###
+```
 
 #### "ModuleNotFoundError: No module named 'terminal'"
-###
-bash
+```bash
 # Make sure you're in the correct directory with all modules
 ls -la  # or dir (on Windows)
 
 # Verify the file exists
 python -c "from kebab_cli import *"
-###
+```
 
 #### "Cannot find image file 'static/system/cursor.png'"
 - Ensure you're running from the correct directory
@@ -141,7 +133,7 @@ python -c "from kebab_cli import *"
 
 Create `config.py` if it doesn't exist with default values:
 
-### python
+```python
 TERM_CONFIG = {
     'success_color': (0, 255, 0),      # Green
     'error_color': (255, 0, 0),        # Red
@@ -152,22 +144,21 @@ TERM_CONFIG = {
     'font_size': 14,
     'line_height': 20,
 }
-###
+```
 
 ### Environment Variables
 
 Optional environment variables:
 
-###
-bash
+```bash
 # Set custom working directory
 export KEBAB_WORK_DIR=/path/to/directory
-python kebab_cli.py
+python main.py
 
 # Set custom font (if implemented)
 export KEBAB_FONT="Courier New"
-python kebab_cli.py
-###
+python main.py
+```
 
 ## Asset Files
 
@@ -202,8 +193,7 @@ PNG files must be RGBA format with transparency support.
 
 ### Quick Test
 
-###
-bash
+```bash
 python -c "
 import sys
 sys.path.insert(0, '.')
@@ -214,17 +204,16 @@ try:
 except Exception as e:
     print(f'✗ Error: {e}')
 "
-###
+```
 
 ### Full Startup Test
 
-###
-bash
+```bash
 python kebab_cli.py &
 sleep 2
 pkill -f kebab_cli.py
 echo "✓ Application started and stopped successfully"
-###
+```
 
 ## Platform-Specific Notes
 
@@ -247,19 +236,17 @@ echo "✓ Application started and stopped successfully"
 
 ### Remove Application
 
-###
-bash
+```bash
 # Remove the directory
 rm -rf kebab-cli
 
 # Or on Windows
 rmdir /s kebab-cli
-###
+```
 
 ### Remove Virtual Environment
 
-###
-bash
+```bash
 # Deactivate first
 deactivate
 
@@ -268,7 +255,7 @@ rm -rf venv
 
 # Or on Windows
 rmdir /s venv
-###
+```
 
 ## Getting Help
 
@@ -276,10 +263,10 @@ rmdir /s venv
 
 Add this to `kebab_cli.py` for debug output:
 
-### python
+```python
 import logging
 logging.basicConfig(level=logging.DEBUG)
-###
+```
 
 ### Check Logs
 
