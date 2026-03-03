@@ -89,29 +89,29 @@ The application detects mouse position over:
 ### Available Actions
 
 #### File Menu
-###
+```
 Save          → Saves output to output.txt
 Save As       → Custom filename dialog
 Clear         → Clear all output
-###
+```
 
 #### Edit Menu
-###
+```
 Copy          → (Not yet implemented)
 Paste         → (Not yet implemented)
-###
+```
 
 #### View Menu
-###
+```
 Zoom In       → (Not yet implemented)
 Zoom Out      → (Not yet implemented)
-###
+```
 
 #### Window Menu
-###
+```
 Minimize      → (Not yet implemented)
 Maximize      → (Not yet implemented)
-###
+```
 
 ## Settings Panel Controls
 
@@ -168,12 +168,12 @@ Maximize      → (Not yet implemented)
 
 ## Keyboard Shortcuts Summary
 
-###
+```
 Quick Reference:
 ═══════════════════════════════════════════════════════════
 Category          | Shortcut              | Function
 ═══════════════════════════════════════════════════════════
-Input             | A-Z, 0-9, Symbols    | Type character
+Input             | A-Z, 0-9, Symbols     | Type character
                   | Enter                 | Execute command
                   | Backspace             | Delete character
 ─────────────────────────────────────────────────────────
@@ -191,4 +191,4 @@ Mouse             | Left Click            | Position cursor
 Menu              | Click Label           | Open menu
                   | Click Item            | Execute action
 ═══════════════════════════════════════════════════════════
-###
+```
