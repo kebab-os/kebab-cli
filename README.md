@@ -11,6 +11,13 @@
 - Custom kernel: Custom made kernel, as the core for the cli.
 - more coming soon...
 
+## Docs
+
+**Read the docs [in this repo](docs), or read the full kebab-os documentation in the [docs repo](https://github.com/kebab-os/docs)**
+
+### User Guide
+
+Read the [user guide](docs/USER_GUIDE.md), for a simple explaination on the basics of kebab-cli.
 
 ## License
 
