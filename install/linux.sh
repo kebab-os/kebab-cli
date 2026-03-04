@@ -2,6 +2,5 @@ cd ~
 mkdir .kebab
 cd .kebab
 git clone https://github.com/kebab-os/kebab-cli.git
-cd kebab-cli
+cd kebab-cli-main
 sudo apt-get install xclip
-pip install pygame requests html2image
