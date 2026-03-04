@@ -19,7 +19,7 @@
 
 ### User Guide
 
-Read the [user guide](docs/USER_GUIDE.md), for a simple explaination on the basics of kebab-cli.
+Read the [user guide](docs/USER_GUIDE.md), for a simple explaination on the basics of kebab-cli. Or skip straight to the [install guide](install/README.md).
 
 ## License
 
