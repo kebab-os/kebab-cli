@@ -2,7 +2,7 @@
 
 ## Quick Setup
 
-### Windows (PowerShell as Administrator)
+### Windows (PowerShell)
 ```powershell
 cd ~
 if (!(Test-Path .kebab)) { mkdir .kebab }
@@ -12,7 +12,7 @@ Expand-Archive -Path kebab-cli.zip -DestinationPath . -Force
 cd kebab-cli/src
 ```
 
-### Linux
+### Linux (bash)
 ```bash
 cd ~
 mkdir .kebab
@@ -25,7 +25,7 @@ sudo apt-get install xclip  # Debian/Ubuntu
 # sudo dnf install xclip    # Fedora
 ```
 
-### macOS
+### macOS (bash)
 ```bash
 cd ~
 mkdir .kebab
