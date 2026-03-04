@@ -152,10 +152,9 @@ cmake .. -DCMAKE_BUILD_TYPE=Debug -DSANITIZE_ADDRESS=ON
 
 ## Need Help?
 
-- **Issues**: GitHub Issues
-- **Discussions**: GitHub Discussions
-- **Discord**: kebabOS Discord
-- **Twitter**: @kebab_os
+- **Issues**: [GitHub Issues](https://github.com/kebab-os/kebab-cli/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/kebab-os/kebab-cli/discussions)
+- **Email**: [contact@kebabos.me](mailto:contact@kebabos.me)
 
 <br /><br />
 
