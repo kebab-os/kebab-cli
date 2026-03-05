@@ -63,6 +63,9 @@ When you have installed kebab-cli, boot it using:
 python main.py
 ```
 
+> [!TIP]
+> If you want to use the safest method, use [this bash script](bin/boot.sh), and run it in shell.
+
 
 ## License
 
