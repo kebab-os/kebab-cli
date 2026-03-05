@@ -23,7 +23,7 @@ Read the [user guide](docs/USER_GUIDE.md), for a simple explaination on the basi
 
 ## Quick Setup
 
-Use these scripts to quickly install kebab-cli onto your device.
+**Use these scripts to quickly install kebab-cli onto your device.**
 
 ### Windows (PowerShell)
 ```powershell
