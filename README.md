@@ -1,7 +1,9 @@
 <div align="center">
   <a href="https://kebabos.me"><img src="static/favicon.png" width="200px" height="auto" /></a>
 <h1>kebabOS CLI - v0.3.0</h1>
-  <b>A high-performance, command-line operating system built in Python Pygame. Features bash-like command shell and custom kernel.</b>
+  <b>
+    A high-performance, command-line shell - Extension of kebab-os
+  </b>
 </div>
 
 ---
